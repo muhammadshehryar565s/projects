@@ -1,0 +1,41 @@
+{% extends 'eapp/index.html' %} 
+{% load static %} 
+{% block title %}
+Category
+{%endblock title %} 
+{% block main-contant %}
+
+
+
+<div class="containter">
+  <div class="row flex justify-content-between">
+    <div class="img2 col-lg-5 mt-5">
+      <img
+        src="{{product1.product_image.url}}"
+        class="image col-xs-6 col-sm-12 mt-3 text-sm-center w-100 h-75"
+        alt=""
+      />
+    </div>
+
+    <div class="productdetail col-lg-5 mt-5">
+      <h1>{{product1.title}}</h1>
+      <h5>Rs.{{product1.discount_price}}</h5>
+      <small class="text-decoration-line-through text-muted fs-5"
+        ><del> Rs. {{product1.selling_price}}/-</del></small
+      >
+
+      <br />
+      <h4>Product Freatures</h4>
+
+       <p> {{product1.discription}}</p>
+
+       <div>
+        <button type="submit" class="btn btn-primary btn-lg p-1 btn-block">Add To Cart</button>
+        <button type="submit" class="btn btn-secondary p-1  btn-lg btn-block">Buy Now</button>
+       </div>  
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
