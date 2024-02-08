@@ -1,0 +1,43 @@
+{% extends 'eapp/index.html' %} 
+{% load static %}
+ {% block title %}Home
+ {%endblock title %} 
+ {% block information %}
+<div class="container ">
+  <div class="row justify-content-center ">
+    <div class="col-md-6">
+      <form method="post" >
+        {% csrf_token %} {% for field in form1 %}
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }} {% if field.errors %}
+          <div class="text-danger">
+            {% for error in field.errors %} {{ error }} {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <div class="text-center text-primary fw-bold">
+        Exiting User <a class="text-danger" href="{% url 'login' %}">Login</a>
+      </div>
+
+      {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-success" role="alert">
+              {{ message }}
+          </div>
+      {% endfor %}
+      {% endif %}
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+{% endblock %}

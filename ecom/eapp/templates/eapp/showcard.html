@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cart</title>
+
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            margin: 0 5px;
+            border: none;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">My Cart</h1>
+        
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <!-- Cart Items -->
+                {% for item in cart %}
+                <div class="card">
+                    <div class='row'>
+                        <div class='mr-2'>
+                            <img src="path_to_image.jpg" alt="Image Description">
+                        </div>    
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.product.title}}1</h5>
+                            <p class="card-text">{{item.product.discription}}2</p>
+                            <p class="card-text">{{ item.product.discount_price}}3</p>
+                            <div class="quantity">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+               
+                <!-- Add more cart items here -->
+            </div>
+            <div class="col-md-4">
+                <!-- Order Summary -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order Summary</h5>
+                        <hr>
+                        <p class="card-text">Subtotal: $X.XX</p>
+                        <p class="card-text">Shipping: $X.XX</p>
+                        <p class="card-text">Total: $X.XX</p>
+                        <button class="btn btn-primary">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      
+    
+
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

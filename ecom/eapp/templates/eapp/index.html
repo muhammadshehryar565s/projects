@@ -1,0 +1,107 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+    
+
+
+
+
+
+
+    <link rel="stylesheet" href="{% static 'eapp/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eapp/css/owl.carousel.min.css' %}">
+    
+    
+    {% comment %} <title> Dairy Product | {% block title %}{% endblock %}</title> {% endcomment %}
+
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand" href="#"> <img src="{% static 'eapp/images/img.png' %}" alt="Example Image" width='70px' height='70px'>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Base <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorys
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'category' 'ML' %}">Milk</a>
+                <a class="dropdown-item" href="{% url 'category' 'MS' %}">Milk Shake</a>
+                <a class="dropdown-item" href="{% url 'category' 'IC' %}">Ice-Creame</a>
+                <a class="dropdown-item" href="{% url 'category' 'CZ' %}">Cheese</a>
+                <a class="dropdown-item" href="{% url 'category' 'PN'%}">Paneer</a>
+              </div>
+            </li>
+           
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mr-2 ml-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Name
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+              <a class="dropdown-item" href="#">Order</a>
+              <a class="dropdown-item" href="#">Checkout</a>
+              <a class="dropdown-item" href="#">Detail</a>
+            </div>
+          </li>
+
+        
+          <a href="{% url 'login' %}"  class="btn btn-dark ml-2">Login</a>
+          <a href="{% url 'CustomerRegistration' %}"  class="btn btn-dark ml-2">SignUp</a>
+          
+
+        </div>
+      </nav>
+
+      
+
+      {% block information %}{% endblock information %}
+
+    {% block main-contant %}
+
+    {% endblock main-contant %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="{% static 'eapp/js/myjs.js' %}"></script>
+    <script src="{% static 'eapp/js/all.min.js' %}"></script>
+    <script src="{% static 'eapp/js/owl.carousel.min.js' %}"></script>
+  </body>
+</html>
